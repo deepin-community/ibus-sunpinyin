@@ -1,5 +1,146 @@
-template-repository (1.0-1) unstable; urgency=medium
+ibus-sunpinyin (2.0.3+git20210228-1) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Import upstream embedded commit (20210228).
+  * Remove Liang Guo from the uploaders list. (Closes: #961615)
+    Thanks for all your work!
+  * debian/: Apply wrap-and-sort -abst.
+  * debian/control: Bump Standards-Version to 4.6.1.
+  * debian/control: Bump debhelper compat to v13.
+  * debian/control: Add versioned ibus dependency (>= 1.5.22-2)
+    for libexecdir.
+  * debian/rules: Drop --as-needed and useless override.
+  * debian/patches:
+    + Drop upstream-applied patches.
+    + Update libexec patch following recent ibus update.
+      (Closes: #955241)
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Boyuan Yang <byang@debian.org>  Sun, 05 Jun 2022 13:39:31 -0400
+
+ibus-sunpinyin (2.0.3+git20181120-5) unstable; urgency=high
+
+  * Team upload.
+  * debian/control:
+    + Bump debhelper compat to v12.
+    + Bump Standards-Version to 4.4.1.
+  * debian/patches/0004-SConstruct-Fix-python3-compatibility.patch:
+    Fix compatibility with scons 3.1.2+. (Closes: #947565)
+
+ -- Boyuan Yang <byang@debian.org>  Wed, 15 Jan 2020 12:59:01 -0500
+
+ibus-sunpinyin (2.0.3+git20181120-4) unstable; urgency=medium
+
+  * Team upload.
+  * debian/patches/0003-Fix-upstream-issue-85: Rework again on the
+    patch to fix issues introduced in the previous uploads. (really
+    really closes: #929078).
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 11 Jun 2019 13:40:06 -0400
+
+ibus-sunpinyin (2.0.3+git20181120-3) unstable; urgency=high
+
+  * Team upload.
+  * debian/patches/0003-Fix-upstream-issue-85: Rework on the patch
+    to fix issues introduced in the previous upload. (really
+    closes: #929078).
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 11 Jun 2019 12:07:21 -0400
+
+ibus-sunpinyin (2.0.3+git20181120-2) unstable; urgency=high
+
+  * Team upload.
+  * debian/patches: Cherry-pick upstream patch to fix crashing
+    when trying to save user settings. (Closes: #929078)
+
+ -- Boyuan Yang <byang@debian.org>  Mon, 10 Jun 2019 12:41:17 -0400
+
+ibus-sunpinyin (2.0.3+git20181120-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream git snapshot 20181120. (Closes: #883309)
+    + Initially keep complete compatibility with python3 and
+      gir1.2-ibus-1.0. (Closes: #769560)
+  * debian: Apply "wrap-and-sort -abst".
+  * debian/control:
+    + Update maintainer and use Debian Input Method Team email address.
+      (Closes: #899547)
+    + Update uploaders' email addresses and use @debian.org ones.
+    + Update Vcs-* fields and use git repo under Salsa Debian Input
+      Method Team group.
+    + Update homepage and use GitHub project.
+    + Bump Standards-Version to 4.2.1.
+    + Bump debhelper compat to v11.
+    + Update dependencies and use the python3 toolchain.
+      (Closes: #883154, #885307)
+  * debian/rules:
+    + Enable full hardening.
+    + Use "dh_missing --fail-missing".
+  * debian/watch: Removed, useless.
+  * Debian/changelog: Remove trailing spaces.
+  * debian/patches:
+    - Remove append-os-environ-toenv.patch, merged upstream.
+    + Add patch to use python3 in ibus-setup-sunpinyin script.
+    + Refresh patches.
+  * debian/copyright:
+    + Refresh copyright information and fix grammar errors.
+
+ -- Boyuan Yang <byang@debian.org>  Tue, 20 Nov 2018 15:38:43 -0500
+
+ibus-sunpinyin (2.0.3-5) unstable; urgency=low
+
+  * Team upload.
+  * Fix libexecdir. Closes: #712583
+
+ -- Osamu Aoki <osamu@debian.org>  Wed, 19 Jun 2013 23:50:51 +0900
+
+ibus-sunpinyin (2.0.3-4) unstable; urgency=low
+
+  [YunQiang Su]
+  * Rewrite debian/rules with dh 7 format.
+  * Fix URL in debian/watch.
+  * Add YunQiang Su to uploaders.
+  * Bump to standard 3.9.3.
+
+  [Liang Guo]
+  * Add ${python:Depends} to Depends.
+  * Add python to Build-Depends.
+  * Call dh with python2.
+  * Update Format in debian/copyright
+
+ -- Liang Guo <bluestonechina@gmail.com>  Thu, 05 Apr 2012 21:09:49 +0800
+
+ibus-sunpinyin (2.0.3-3) unstable; urgency=low
+
+  * debian/copyright:
+    - Update Format, add version information
+    - Add Upstream-Contact
+  * debian/control:
+    - Add python-glade2 to depends(Closes: #649235)
+
+ -- Liang Guo <bluestonechina@gmail.com>  Wed, 28 Dec 2011 23:20:49 +0800
+
+ibus-sunpinyin (2.0.3-2) unstable; urgency=low
+
+  * Add libibus-1.0-dev to build-depends, Remove libibus-dev(Closes: #640714)
+  * Add build-arch and build-indep in debian/rules
+  * Bump Standards-Version to 3.9.2
+  * Update debian/copyright to fit DEP-5
+  * Move git repository from collab-maint to pkg-ime,
+    Update Vcs-* fields in debian/control
+
+ -- Liang Guo <bluestonechina@gmail.com>  Fri, 09 Sep 2011 13:59:54 +0800
+
+ibus-sunpinyin (2.0.3-1) unstable; urgency=low
+
+  * New upstream release 2.0.3.
+  * Upload to unstable.
+  * Update VCS field in debian/control.
+  * Remove README.source, it's no meaning now.
+
+ -- Liang Guo <bluestonechina@gmail.com>  Sat, 19 Feb 2011 16:35:54 +0800
+
+ibus-sunpinyin (2.0.2-1) experimental; urgency=low
+
+  * Initial release (Closes: #587839)
+
+ -- Liang Guo <bluestonechina@gmail.com>  Thu, 19 Aug 2010 22:47:06 +0800

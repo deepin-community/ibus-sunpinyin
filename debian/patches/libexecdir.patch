@@ -1,0 +1,32 @@
+From: Osamu Aoki <osamu@debian.org>
+Date: Tue, 20 Nov 2018 14:04:42 -0500
+Subject: libexecdir
+
+Last-Update: 2022-06-05
+Bug-Debian: https://bugs.debian.org/955241
+---
+ SConstruct | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/SConstruct b/SConstruct
+index 8d8d5c4..39c38d1 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -48,7 +48,7 @@ opts.Update(env)
+ if GetOption('prefix') is not None:
+     env['PREFIX'] = GetOption('prefix')
+     env['LIBDIR'] = env['PREFIX'] + '/lib'
+-    env['LIBEXECDIR'] = env['PREFIX'] + '/lib/'
++    env['LIBEXECDIR'] = env['PREFIX'] + '/libexec/'
+     env['DATADIR'] = env['PREFIX'] + '/share/'
+ 
+ if GetOption('libdir') is not None:
+@@ -71,7 +71,7 @@ PassVariables(envvar, env)
+ 
+ data_dir = env['DATADIR'] + '/ibus-sunpinyin'
+ icons_dir = env['DATADIR'] + '/ibus-sunpinyin/icons'
+-bin_dir = env['LIBEXECDIR'] + '/ibus-sunpinyin'
++bin_dir = env['LIBEXECDIR'] + '/'
+ gettext_package = 'ibus-sunpinyin'
+ 
+ extra_cflags = ' -DIBUS_SUNPINYIN_LOCALEDIR=\'"%s"\'' % (env['DATADIR'] + '/locale')

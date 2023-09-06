@@ -1,0 +1,18 @@
+From: Boyuan Yang <byang@debian.org>
+Date: Tue, 20 Nov 2018 15:19:03 -0500
+Subject: setup/ibus-setup-sunpinyin.in: Use python3 explicitly
+
+---
+ setup/ibus-setup-sunpinyin.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/setup/ibus-setup-sunpinyin.in b/setup/ibus-setup-sunpinyin.in
+index 2d32738..a69d461 100644
+--- a/setup/ibus-setup-sunpinyin.in
++++ b/setup/ibus-setup-sunpinyin.in
+@@ -4,4 +4,4 @@ prefix=@INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ export IBUS_PREFIX=${prefix}
+ export IBUS_LOCALEDIR=${prefix}/share/locale
+-exec python @DATA_DIR@/setup/main.py $@
++exec python3 @DATA_DIR@/setup/main.py $@
